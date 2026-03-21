@@ -362,6 +362,19 @@ footer strong { color:rgba(255,255,255,.7); }
   pointer-events: none; z-index: 9999;
 }
 
+
+/* ── PROGRAMAÇÃO chip bounce ── */
+.chip-programacao {
+  animation: chip-bounce 1.4s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+@keyframes chip-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30%       { transform: translateY(-7px) scale(1.07); }
+  50%       { transform: translateY(-3px) scale(1.03); }
+  70%       { transform: translateY(-6px) scale(1.05); }
+}
+
 </style>
 </head>
 <body>
@@ -370,14 +383,15 @@ footer strong { color:rgba(255,255,255,.7); }
 <section class="hero">
   <div class="hero-stripes"></div>
   <div class="container text-center position-relative" style="z-index:2">
-    <img class="logo-img mb-3" src="https://i.ibb.co/5mqgjPt/LOGO-JUVENIL.png" alt="Juvenil Volei Club">
+    <img class="logo-img mb-3" src="https://i.ibb.co/SXKR113f/LOGO-JUVENIL.png" alt="Juvenil Volei Club">
     <div class="mb-2"><span class="badge-edicao">2ª Edição · 2026</span></div>
     <h1 class="hero-title mb-1">Copa Araguaína<span>de Voleibol</span></h1>
     <p class="hero-subtitle mb-4">Sub-17 &amp; Sub-23 Masculino</p>
     <div class="d-flex flex-wrap justify-content-center gap-2">
       <span class="hero-chip"><i class="bi bi-calendar3"></i> 21 e 22 de Março</span>
       <span class="hero-chip"><i class="bi bi-clock"></i> A partir das 09h00</span>
-      <a href="https://share.google/7aLfFgmW62yzQMxS3" target="_blank" class="hero-chip"><i class="bi bi-geo-alt-fill"></i> Araguaína – TO</a>
+      <a href="https://share.google/7aLfFgmW62yzQMxS3" target="_blank" class="hero-chip"><i class="bi bi-geo-alt-fill"></i> Ginásio de Esportes Neblina</a>
+      <a href="#tabela-jogos" class="hero-chip chip-programacao"><i class="bi bi-table"></i> Programação</a>
     </div>
   </div>
 </section>
@@ -392,7 +406,7 @@ footer strong { color:rgba(255,255,255,.7); }
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row justify-content-center"><div class="col-8 col-sm-5 col-md-4">
-            <div class="apoio-card-logo"><img class="apoio-logo-img juvenil-logo" src="https://i.ibb.co/5mqgjPt/LOGO-JUVENIL.png" alt="Juvenil Volei Club"></div>
+            <div class="apoio-card-logo"><img class="apoio-logo-img juvenil-logo" src="https://i.ibb.co/SXKR113f/LOGO-JUVENIL.png" alt="Juvenil Volei Club"></div>
           </div></div>
         </div>
         <div class="carousel-item">
@@ -585,7 +599,7 @@ footer strong { color:rgba(255,255,255,.7); }
 </section>
 
 <!-- ══ TABELA DE JOGOS ══ -->
-<section class="jogos-section">
+<section class="jogos-section" id="tabela-jogos">
   <div class="container">
     <p class="section-label">21 de Março de 2026 · Jogos de 45 min</p>
     <h2 class="section-title">Tabela de Jogos — Sub-23</h2>
@@ -736,7 +750,7 @@ footer strong { color:rgba(255,255,255,.7); }
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row justify-content-center"><div class="col-8 col-sm-5 col-md-4">
-            <div class="apoio-card-logo"><img class="apoio-logo-img juvenil-logo" src="https://i.ibb.co/5mqgjPt/LOGO-JUVENIL.png" alt="Juvenil Volei Club"></div>
+            <div class="apoio-card-logo"><img class="apoio-logo-img juvenil-logo" src="https://i.ibb.co/SXKR113f/LOGO-JUVENIL.png" alt="Juvenil Volei Club"></div>
           </div></div>
         </div>
         <div class="carousel-item">
