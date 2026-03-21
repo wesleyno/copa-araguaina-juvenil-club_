@@ -375,6 +375,32 @@ footer strong { color:rgba(255,255,255,.7); }
   70%       { transform: translateY(-6px) scale(1.05); }
 }
 
+
+/* ── Carousel arrows — always visible ── */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px;
+  opacity: 1 !important;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 28px;
+  height: 28px;
+  background-color: rgba(245,196,0,0.25);
+  border-radius: 50%;
+  padding: 6px;
+  background-size: 60%;
+}
+.apoio-section .carousel-control-prev-icon,
+.apoio-section .carousel-control-next-icon {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(5deg) !important;
+}
+.formato-section .carousel-control-prev-icon,
+.formato-section .carousel-control-next-icon {
+  filter: invert(1) sepia(1) saturate(3) hue-rotate(190deg) !important;
+  background-color: rgba(13,43,107,0.15);
+}
+
 </style>
 </head>
 <body>
@@ -889,6 +915,44 @@ function toggleReg(btn) { btn.parentElement.classList.toggle('open'); }
       window.shootConfetti();
     });
   }
+})();
+</script>
+
+
+<script>
+// ── Universal swipe/drag for all Bootstrap carousels ──
+(function(){
+  document.querySelectorAll('.carousel').forEach(function(el){
+    var startX = 0, isDragging = false, threshold = 50;
+
+    // Touch events
+    el.addEventListener('touchstart', function(e){
+      startX = e.touches[0].clientX;
+    }, {passive: true});
+
+    el.addEventListener('touchend', function(e){
+      var diff = startX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > threshold){
+        var inst = bootstrap.Carousel.getOrCreateInstance(el);
+        diff > 0 ? inst.next() : inst.prev();
+      }
+    }, {passive: true});
+
+    // Mouse drag
+    el.addEventListener('mousedown', function(e){
+      startX = e.clientX; isDragging = true;
+    });
+    el.addEventListener('mouseup', function(e){
+      if(!isDragging) return;
+      isDragging = false;
+      var diff = startX - e.clientX;
+      if(Math.abs(diff) > threshold){
+        var inst = bootstrap.Carousel.getOrCreateInstance(el);
+        diff > 0 ? inst.next() : inst.prev();
+      }
+    });
+    el.addEventListener('mouseleave', function(){ isDragging = false; });
+  });
 })();
 </script>
 
